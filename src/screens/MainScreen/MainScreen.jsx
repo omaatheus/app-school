@@ -6,16 +6,18 @@ export default function MainScreen(){
     return(
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
-                <Text></Text>
-                <Text></Text>
+                <View style={styles.phrase}>
+                    <Text style={styles.quote}>"It must be a poor life that achieves freedom from fear."</Text>
+                    <Text style={styles.author}>Aldo Leopold</Text>
+                </View>
             </View>
             <View style={styles.footer}>
                 <View style={styles.ContainerDiv}>
                 <View style={styles.div}>
-                    <Button  title="D2"></Button>
-                    <Button  title="D4"></Button>
-                    <Button title="D6"></Button>
-                    <Button title="D8"></Button>
+                    <Button  title="D2" style={styles.button}></Button>
+                    <Button  title="D4" style={styles.button}></Button>
+                    <Button title="D6" style={styles.button}></Button>
+                    <Button title="D8" style={styles.button}></Button>
                 </View>
                     <View style={styles.div}>
                     <Button title="D10"></Button>

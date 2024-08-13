@@ -12,28 +12,51 @@ export const styles = StyleSheet.create({
     header: {
         width: width,
         height: height * 0.8,
-        backgroundColor: 'red',
+        justifyContent: 'flex-end',
+        padding: 35,
+
     },
+
+    phrase:{
+        alignItems: 'center',
+    },
+
+    quote:{
+        color: "#707070",
+        fontSize: 13,
+        fontWeight: '300',
+        
+    },
+
+    author:{
+        color: '#707070',
+        marginTop: 10,
+        fontSize: 13,
+    },
+
     footer: {
         width: width,
         height: height * 0.45,
         backgroundColor: 'blue',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#F0F3F5',
     },
     div: {
         width: width * 0.8,
         height: height * 0.1,
-        backgroundColor: 'yellow',
         flexDirection: 'row',
         justifyContent: 'center',
     },
     ContainerDiv: {
         width: width * 0.9,
         height: height * 0.25,
-        backgroundColor: 'green',
         alignItems: 'center',
         justifyContent: 'center',
         bottom: '15%'
+    },
+
+    button:{
+        marginLeft: 1,
     },
 })
