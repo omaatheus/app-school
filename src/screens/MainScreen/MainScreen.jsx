@@ -1,6 +1,6 @@
-import { Button, SafeAreaView, TouchableOpacity } from "react-native";
+import { SafeAreaView, TouchableOpacity } from "react-native";
 import { View, Text } from "react-native";
-import { styles } from "./styles";
+import { styles } from "../styles.js";
 import DiceButton from "../../components/DiceButton";
 import { useContext, useState } from "react";
 import Quote from "../../components/Quote";
@@ -10,7 +10,7 @@ export default function MainScreen() {
   const [diceResult, setDiceResult] = useState();
   // importando o global state
   const { history, setHistory } = useContext(HistoryContext);
-
+  console.log("Singleton");
   console.log(history);
   /**
    *
@@ -19,18 +19,18 @@ export default function MainScreen() {
    * @description -- sortei um número entre 1 e X e retorna o valor sorteado
    *
    *  */
-
   function rollDice(x) {
     // Roll from 1 to X
     const diceRoll = {
       dice: Math.floor(Math.random() * x) + 1,
       sides: x,
-      rolled_at: new Date().toLocaleString(), // Data e hora atual
+      rolled_at: new Date().toLocaleTimeString(), // Data e hora atual
     };
     // coloque o que já tinha no history e adicione a nova rolagem
     setHistory([...history, diceRoll]);
     setDiceResult(diceRoll.dice);
   }
+  function sum() {}
 
   return (
     <SafeAreaView style={styles.container}>

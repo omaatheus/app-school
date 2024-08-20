@@ -9,9 +9,7 @@ const Triangle = (props) => (
     viewBox="0 0 100 100"
   >
     <Path d="M50 15L90 85H10z" fill="#000" />
-    <Text fontSize="24" x={50} y={144 / 2} fill="white" textAnchor="middle">
-      {props.text}
-    </Text>
+
   </Svg>
 );
 

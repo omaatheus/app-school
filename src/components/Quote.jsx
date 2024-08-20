@@ -1,4 +1,4 @@
-import { styles } from "../screens/MainScreen/styles";
+import { styles } from "../screens/styles";
 import { View, Text } from "react-native";
 
 export default function Quote() {
