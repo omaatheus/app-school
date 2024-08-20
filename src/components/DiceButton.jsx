@@ -1,60 +1,40 @@
-import { TouchableOpacity, Text, Image } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 import { StyleSheet } from "react-native";
+import SvgCircle from "../components/svgs/Circle";
+import SvgTriangle from "../components/svgs/Triangle";
+import SvgSquare from "../components/svgs/Square";
+import SvgDiamond from "../components/svgs/Diamond";
 
-import Triangle from '../assets/triangle.svg'
+export default function DiceButton({ dices, rollDice }) {
+  let SvgComponent;
 
+  if (dices.includes("d2")) {
+    SvgComponent = SvgCircle;
+  } else if (dices.includes("d4")) {
+    SvgComponent = SvgTriangle;
+  } else if (dices.includes("d6")) {
+    SvgComponent = SvgSquare;
+  } else {
+    SvgComponent = SvgDiamond;
+  }
 
-
-export default function DiceButton({dices, rollDice, svg}){
-    return(
-        <TouchableOpacity onPress={rollDice}>
-
-            {svg === 1 ?
-            <Triangle>
-            <Text>{dices}</Text>    
-            </Triangle>
-             :
-            <Text>1</Text>
-            }
-            {svg === 2 ? 
-            <Text>{dices}</Text> :
-            <Text>ERRO</Text>
-            }
-            {svg === 3 ? 
-            <Text>{dices}</Text> :
-            <Text>ERRO</Text>
-            }
-            {svg === 4 ? 
-            <Text>{dices}</Text> :
-            <Text>ERRO</Text>
-            }
-            {svg === 5 ? 
-            <Text>{dices}</Text> :
-            <Text>ERRO</Text>
-            }
-            {svg === 6 ? 
-            <Text>{dices}</Text> :
-            <Text>ERRO</Text>
-            }
-            {svg === 7 ? 
-            <Text>{dices}</Text> :
-            <Text>ERRO</Text>
-            }
-            {svg === 8 ? 
-            <Text>{dices}</Text> :
-            <Text>ERRO</Text>
-            }
-            
-         </TouchableOpacity>
-    )
+  return (
+    <TouchableOpacity onPress={rollDice} style={styles.button}>
+      <SvgComponent text={dices} />
+    </TouchableOpacity>
+  );
 }
 
-//Adapter é um design paterno    <Text>{dices}</Text>
 const styles = StyleSheet.create({
-    button: {
-        width: '20%',
-        maxWidth: 72,
-        backgroundColor: 'blue',
-        borderWidth: 1,
-    }, 
-})
+  button: {
+    width: "25%",
+    maxWidth: 80,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+});
