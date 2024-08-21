@@ -9,9 +9,7 @@ const SvgSquare = (props) => (
     viewBox="0 0 15 15"
   >
     <Path d="M13 14H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1" />
-    <Text fontSize="24" x={50} y={50} fill="white" textAnchor="middle">
-      {props.text}
-    </Text>
+
   </Svg>
 );
 

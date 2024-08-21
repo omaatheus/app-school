@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HistoryProvider } from "./src/context/History";
+import History from "./src/screens/History";
 
 const Tab = createBottomTabNavigator();
 
@@ -23,6 +24,20 @@ export default function App() {
               tabBarIcon: ({ color }) => (
                 <MaterialCommunityIcons
                   name="dice-d20"
+                  color={color}
+                  size={26}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Histórico"
+            component={History}
+            options={{
+              tabBarLabel: "History",
+              tabBarIcon: ({ color }) => (
+                <MaterialCommunityIcons
+                  name="history"
                   color={color}
                   size={26}
                 />
